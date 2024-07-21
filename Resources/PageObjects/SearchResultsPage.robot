@@ -1,12 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource   ./HeaderPage.robot     # import search value to verify in the tests
 
 *** Variables ***
+${search_result}    results for
 
 *** Keywords ***
 Verify Search Results
     [Tags]    Result
-    page should contain    results for mobile
+    #                       starting search phrase | search text
+    page should contain    ${search_result} ${input_search_text}    # input search imported from headerpage
     sleep   2s
 
 Buy It Now Option

@@ -25,3 +25,4 @@ Verify Basic Category Option Choose
     [Tags]    Functional
     LandingPage.Select Electronics Category
     SearchResultsPage.Verify Category Option Choose
+
