@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.10.4 on win32)" generated="2024-07-21T12:59:57.428076" rpa="false" schemaversion="5">
+<suite id="s1" name="SearchTestPOO" source="C:\Users\Kacper\PycharmProjects\Robot\test-project\Tests\Ebay\SearchTestPOO.robot">
+<test id="s1-t1" name="Verify basic search and filter options for eBay" line="15">
+<kw name="Open Browser For Tests" owner="CommonResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-21T12:59:57.708910" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
+<arg>https://www.ebay.com</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--no-sandbox")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-21T12:59:57.708910" elapsed="3.474760"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-21T13:00:01.183670" elapsed="0.032087"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-21T13:00:03.229356" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-21T13:00:01.216757" elapsed="2.012599"/>
+</kw>
+<status status="PASS" start="2024-07-21T12:59:57.707911" elapsed="5.521445"/>
+</kw>
+<kw name="Search For Mobile" owner="HeaderPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:03.230357" level="INFO">Typing text 'mobile' into text field 'css:#gh-ac'.</msg>
+<arg>css:#gh-ac</arg>
+<arg>mobile</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:03.230357" elapsed="0.110635"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:03.340992" level="INFO">Clicking element 'id:gh-btn'.</msg>
+<arg>id:gh-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:03.340992" elapsed="0.472069"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-21T13:00:04.827852" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-21T13:00:03.813061" elapsed="1.014791"/>
+</kw>
+<status status="PASS" start="2024-07-21T13:00:03.229356" elapsed="1.598496"/>
+</kw>
+<kw name="Verify Search Results" owner="SearchResultsPage">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:05.613846" level="INFO">Current page contains text 'results for mobile'.</msg>
+<arg>results for mobile</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-07-21T13:00:04.828367" elapsed="0.785479"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-21T13:00:07.622851" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-21T13:00:05.613846" elapsed="2.009005"/>
+</kw>
+<tag>Result</tag>
+<status status="PASS" start="2024-07-21T13:00:04.828367" elapsed="2.794484"/>
+</kw>
+<kw name="Buy It Now Option" owner="SearchResultsPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:07.623851" level="INFO">Clicking element 'xpath: //*[contains(text(), "Buy It Now")]'.</msg>
+<arg>xpath: //*[contains(text(), "Buy It Now")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:07.623851" elapsed="1.982124"/>
+</kw>
+<tag>Action</tag>
+<status status="PASS" start="2024-07-21T13:00:07.622851" elapsed="1.984123"/>
+</kw>
+<kw name="Verify Buy It Now Option" owner="SearchResultsPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@aria-current="page"]</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-21T13:00:09.607975" elapsed="0.155758"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:09.778287" level="INFO">${span} = &lt;selenium.webdriver.remote.webelement.WebElement (session="16f124755d8eff5eddd007bcc555a120", element="f.9FD0FCF4813A5C41672F2284C19E7F77.d.2AB7C4986DF4B97528DB18035342E7BF.e.561")&gt;</msg>
+<var>${span}</var>
+<arg>//a[@aria-current="page"]/span[@class="srp-format-tabs-h2"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:09.763733" elapsed="0.014554"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:09.784793" level="INFO">${aria_label} = Buy It Now selected</msg>
+<var>${aria_label}</var>
+<arg>${span}</arg>
+<arg>aria-label</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:09.779278" elapsed="0.005515"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${aria_label}</arg>
+<arg>Buy It Now selected</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-21T13:00:09.785793" elapsed="0.000000"/>
+</kw>
+<tag>Result</tag>
+<status status="PASS" start="2024-07-21T13:00:09.606974" elapsed="0.178819"/>
+</kw>
+<kw name="Close Browser After Tests" owner="CommonResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-21T13:00:09.786793" elapsed="3.846845"/>
+</kw>
+<status status="PASS" start="2024-07-21T13:00:09.786793" elapsed="3.846845"/>
+</kw>
+<doc>This test case verifies the basic search and filter options</doc>
+<tag>Functional</tag>
+<status status="PASS" start="2024-07-21T12:59:57.706910" elapsed="15.926728"/>
+</test>
+<test id="s1-t2" name="Verify Basic Category Option Choose" line="23">
+<kw name="Open Browser For Tests" owner="CommonResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:13.636155" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
+<arg>https://www.ebay.com</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--no-sandbox")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-21T13:00:13.636155" elapsed="4.734373"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-21T13:00:18.371528" elapsed="0.034600"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-21T13:00:20.420710" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-21T13:00:18.407128" elapsed="2.013582"/>
+</kw>
+<status status="PASS" start="2024-07-21T13:00:13.635639" elapsed="6.785071"/>
+</kw>
+<kw name="Select Electronics Category" owner="LandingPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:20.421711" level="INFO">Clicking element 'link:Electronics'.</msg>
+<arg>link:Electronics</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-21T13:00:20.421711" elapsed="1.812591"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-21T13:00:24.246715" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-21T13:00:22.234302" elapsed="2.012413"/>
+</kw>
+<tag>Action</tag>
+<status status="PASS" start="2024-07-21T13:00:20.420710" elapsed="3.826005"/>
+</kw>
+<kw name="Verify Category Option Choose" owner="SearchResultsPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h1[@class="b-pageheader"]/span[@class="b-pageheader__text"]</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-21T13:00:24.247716" elapsed="0.017053"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-21T13:00:24.264769" level="INFO">Verifying element '//h1[@class="b-pageheader"]/span[@class="b-pageheader__text"]' contains exact text 'Electronics'.</msg>
+<arg>//h1[@class="b-pageheader"]/span[@class="b-pageheader__text"]</arg>
+<arg>Electronics</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-21T13:00:24.264769" elapsed="0.015089"/>
+</kw>
+<tag>Result</tag>
+<status status="PASS" start="2024-07-21T13:00:24.246715" elapsed="0.033143"/>
+</kw>
+<kw name="Close Browser After Tests" owner="CommonResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-21T13:00:24.280858" elapsed="3.818760"/>
+</kw>
+<status status="PASS" start="2024-07-21T13:00:24.280858" elapsed="3.818760"/>
+</kw>
+<doc>This test case verifies the basic choose of a landing page category</doc>
+<tag>Functional</tag>
+<status status="PASS" start="2024-07-21T13:00:13.634638" elapsed="14.464980"/>
+</test>
+<status status="PASS" start="2024-07-21T12:59:57.429590" elapsed="30.671029"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="SearchTestPOO">SearchTestPOO</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
