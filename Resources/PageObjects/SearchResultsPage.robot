@@ -9,7 +9,7 @@ ${search_result}    results for
 Verify Search Results
     [Tags]    Result
     #                       starting search phrase | search text
-    page should contain    ${search_result} ${input_search_text}    # input search imported from headerpage
+    page should contain    ${search_result} ${input_search_list}[1]    # input search imported from headerpage
     sleep   2s
 
 Buy It Now Option
