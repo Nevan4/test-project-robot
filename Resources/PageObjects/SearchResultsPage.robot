@@ -13,6 +13,11 @@ Verify Search Results
     page should contain    ${search_result} ${search_text.first}   # input search imported from headerpage
     sleep   2s
 
+Verify Search Results With Keyword Argument
+    [Tags]    Keyword Argument
+    [Arguments]    ${keyword_verify_text}
+    Page Should Contain    ${search_result} ${keyword_verify_text}
+
 Buy It Now Option
     [Tags]    Action
     click element  xpath: //*[contains(text(), "Buy It Now")]

@@ -15,3 +15,9 @@ Search For Mobile
     input text    css:#gh-ac  ${search_text.first}
     click element    id:gh-btn
     sleep   1s
+
+Keyword With Argument Search
+    [Arguments]    ${keyword_search_text}
+    input text    css:#gh-ac  ${keyword_search_text}
+    click element    id:gh-btn
+    sleep   1s

@@ -26,3 +26,8 @@ Verify Basic Category Option Choose
     LandingPage.Select Electronics Category
     SearchResultsPage.Verify Category Option Choose
 
+Verify Basic Search Using Keyword Arguments
+    [Documentation]    This test case uses keyword arguments to execute basic search test
+    [Tags]    Keyword Argument
+    HeaderPage.Keyword With Argument Search    robot
+    SearchResultsPage.Verify Search Results With Keyword Argument    robot
