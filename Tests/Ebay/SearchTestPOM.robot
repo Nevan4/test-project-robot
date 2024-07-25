@@ -31,3 +31,10 @@ Verify Basic Search Using Keyword Arguments
     [Tags]    Keyword Argument
     HeaderPage.Keyword With Argument Search    robot
     SearchResultsPage.Verify Search Results With Keyword Argument    robot
+
+
+Verify Basic Search Using Webelements From Exteral File
+    [Documentation]    This test case uses webelements, i.e. locators from external file
+    [Tags]    Webelements
+    HeaderPage.Search For Mobile With Webelements From Python File
+    SearchResultsPage.Verify Search Results With Keyword Argument    mobile
