@@ -10,7 +10,7 @@ Verify Search Results
     [Tags]    Result
     #                       starting search phrase | search text
 #    page should contain    ${search_result} ${input_search_list}[1]    # input search imported from headerpage
-    page should contain    ${search_result} ${search_text.first}   # input search imported from headerpage
+    page should contain    ${search_result} ${search_text.third}   # input search imported from headerpage
     sleep   2s
 
 Verify Search Results With Keyword Argument

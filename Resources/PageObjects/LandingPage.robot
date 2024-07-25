@@ -2,9 +2,10 @@
 Library    SeleniumLibrary
 
 *** Variables ***
+${SearchCategory}    link:Electronics   # couldn't create a proper xpath for this element
 
 *** Keywords ***
 Select Electronics Category
     [Tags]    Action
-    click element    link:Electronics   # couldn't create a proper xpath for this element
+    click element    ${SearchCategory}
     sleep    2s
